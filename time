@@ -1,0 +1,48 @@
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+class Time 
+{
+  private:
+   int seconds;
+   int hh,mm,ss;
+  public:
+   void gettime(void);
+   void converttime(void);
+   void displaytime(void);
+  
+};
+
+void Time :: gettime(void)
+{
+ cout<<"Display time: "<< endl;
+ cout<<"Enter hour :";
+ cin>>hh;
+ cout<<"Enter minutes:"<<endl;
+ cin>>mm;
+ cout<<"Enter seconds:"<<endl;
+ cin>>ss;
+}
+
+void Time :: converttime(void)
+{
+    seconds = hh*3600 + mm*60 + ss;
+}
+
+void Time :: displaytime(void)
+{
+    cout<<"The actual time is"<<setw(2)<<setfill('0')<<hh<<":"<<setw(2) << setfill('0') << mm << ":"
+                             << setw(2) << setfill('0') << ss << endl;
+    cout<<"Time in seconds:"<<seconds;
+}
+
+int main()
+{
+    Time T;
+    
+    T.gettime();
+    T.converttime();
+    T.displaytime();
+    return 0;
+}
